@@ -1,0 +1,30 @@
+ 
+  .landing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("https://www.pixelstalk.net/wp-content/uploads/2016/06/Free-Download-Video-Game-Wallpaper.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .logo {
+    width: 400px;
+    height: 300px;
+    animation-duration: 4s;
+    animation-name: logo;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes logo {
+    50% {
+      width: 400px;
+      height: 300px;
+    }
+  
+    50% {
+      width: 300px;
+      height: 200px;
+    }
+  }

@@ -1,0 +1,26 @@
+.allInfo{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.gameInfo{
+    align-items: center;
+    justify-content: center;
+    width: 750px;
+}
+
+.gameImage{
+    width: 750px;
+
+}
+
+.info{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 750px;
+}

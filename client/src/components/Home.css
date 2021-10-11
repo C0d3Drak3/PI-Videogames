@@ -1,0 +1,33 @@
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #9f7fa3;
+    
+}
+
+.paginas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #9f7fa3;
+}
+
+.botonesP{
+    width: 80px;
+}
+
+.numeroP{
+    display: flex;
+    border: black;
+    border-radius: 4px;
+    border-color: rgb(189, 18, 18);
+    background-color: lightcyan;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+
+
+}
