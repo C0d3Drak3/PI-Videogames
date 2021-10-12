@@ -14,7 +14,7 @@ const Home = () => {
     
     useEffect(()=>{
        dispatch(getGames({page,name,order})) //no se como ni porque, pero funciona y deja de cargar el estado 0
-    },[dispatch])
+    },[dispatch, page,name,order])
     //Para cambiar de pagina
     const changePage = (page)=>{
         dispatch(getGames({page,name,order}))

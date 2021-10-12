@@ -107,12 +107,22 @@ export const removeGame = ()=>{
 }
 
 //acciones de filtros
-export const genreFilter =(genero)=>{
+ export const genreFilter =(genero)=>{
     return{
         type: FILTER_GENRE,
         payload: genero
     }
-}
+} 
+
+/* export function genreFilter(genero) {
+    return async function (dispatch) {
+        return dispatch({
+            type: FILTER_GENRE,
+            payload: genero,
+        });
+    };
+} */
+
 export const originFilter =(origin)=>{
     return{
         type: FILTER_ORIGIN,

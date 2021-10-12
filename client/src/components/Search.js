@@ -15,8 +15,8 @@ function Search() {
 
     const onSubmit = (e)=>{
         e.preventDefault()
-        dispatch(setName(input))//guardamos en store el name
-        dispatch(getGames({page:1, name:input})) // buscamos efectivamente
+        dispatch(setName(input))
+        dispatch(getGames({page:1, name:input})) 
         dispatch(setPage(1))
         setInput("")
     }

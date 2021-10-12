@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getGames, getGenres, setPage, genreFilter} from '../Redux/actions'
+import { originFilter, getGenres, setPage, genreFilter, getGames} from '../Redux/actions'
 
 
 
@@ -9,7 +9,7 @@ function Filter() {
 
     
     const dispatch = useDispatch()
-    const {genres, name, page, order } = useSelector(state => state)
+    const {genres} = useSelector(state => state)
 
     useEffect(()=>{
         dispatch(getGenres())
@@ -18,9 +18,15 @@ function Filter() {
 
     const handleSelect = (e)=>{
         e.preventDefault()
+        
         dispatch(genreFilter(e.target.value))
-        dispatch(getGames({name, page, order}))
         dispatch(setPage(1))
+    }
+
+    const handleSelectO = (e)=>{
+        e.preventDefault()
+        dispatch(originFilter(e.target.value))
+        
     }
 
 
@@ -31,7 +37,16 @@ function Filter() {
                 <option selected value="all">all</option>
                 {genres.map((g) => { return <option key={g.id} value={g.id}>{g.name}</option>})}
             </select>
+            <div>
+                <select onChange={handleSelectO}>
+                    <option selected value="all">all</option>
+                    <option selected value="api">api</option>
+                    <option selected value="db">db</option>
+                </select>
+                
+            </div>
         </div>
+        
     )
 }
 

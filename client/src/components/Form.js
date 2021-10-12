@@ -59,20 +59,34 @@ export default function Form() {
             });
         }
     };
-   /*  const handleOnChangeGenres = (e)=>{
-        if(formulario.genre.includes(e.target.value)){
-           let newGenres = formulario.genre.filter(g => g !== e.target.value)
+    const handleGenres = (g)=>{
+        if(formulario.genre.includes(g.target.value)){
+           let tempGen = formulario.genre.filter(vg => vg !== g.target.value)
             setFormulario({
                 ...formulario,
-               genre: newGenres
+               genre: tempGen
             })
         }else{
             setFormulario({
                 ...formulario,
-                genre: [...formulario.genre, e.target.value]
+                genre: [...formulario.genre, g.target.value]
             })
         }
-    } */
+    }
+    const handlePlatforms = (p)=>{
+        if(formulario.platforms.includes(p.target.value)){
+           let temPlat = formulario.platforms.filter(vg => vg !== p.target.value)
+            setFormulario({
+                ...formulario,
+               platforms: temPlat
+            })
+        }else{
+            setFormulario({
+                ...formulario,
+                platforms: [...formulario.platforms, p.target.value]
+            })
+        }
+    }
     
     const platformsList = [
         { name: "PC" },
@@ -106,18 +120,27 @@ export default function Form() {
             <input value={formulario.rating} placeholder="0.00 to 5.00" onChange={handleOnChange} name="rating" type="text" />
             <label >Plataformas 🎮</label>
             <div>
-                <select name='platforms' multiple='multiple'onChange={handleGenresAndPlat} required >
+                <select name='platforms' onChange={handlePlatforms} required >
                     {platformsList.map((p, i) => {return <option key={i} value={p.name}>{p.name}</option>})}
                 </select>
+                {formulario?.platforms.length > 0 && formulario.platforms.map(e =>(
+                    <label>🕹{e}</label>
+                ))}
             </div>
             <div>
-                <select name='genres' multiple='multiple'  onChange={handleGenresAndPlat}  required >
+                <select name='genres' onChange={handleGenres}  required >
+                    <optgroup label="Genres"/>
                     {genres.map((g) => { return <option key={g.id} value={g.id}>{g.name}</option>})}
                 </select>
+                
+                {formulario?.genre.length > 0 && formulario.genre.map(e =>(
+                    <label>-{e}</label>
+                ))}
+                
             </div>
             
             
-            <button type='submit'>
+            <button type='submit' disabled={formulario.genre.length === 0}>
                 <span>ADD GAME</span>
             </button>
         </form>
