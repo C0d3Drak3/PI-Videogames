@@ -34,7 +34,7 @@ const addVideogame = (req,res, next)=>{
 //Get por nombre y general
 async function getVideogames(req, res, next){
     try {
-        let {name, order, page} = req.query
+        let {name, order, page, genero} = req.query
         
         
         let apiVideogames
@@ -71,6 +71,7 @@ async function getVideogames(req, res, next){
                 background_image: e.background_image,
                 rating: e.rating,
                 genres: e.genres,
+                genresId: e.genres.map(g=>g.id)
                 }))
                 allGames= infoGames
         }
@@ -97,6 +98,7 @@ async function getVideogames(req, res, next){
             background_image: e.background_image,
             rating: e.rating,
             genres: e.genres,
+            genresId: e.genres.map(g=>g.id)
             }))
             allGames= infoGames
         }
@@ -121,15 +123,24 @@ async function getVideogames(req, res, next){
             })
         }
         
+        //filtrado por genero
+        /* if (genero === "all") {
+            allGames= allGames
+        } else {
+            console.log("todos los juegos", allGames)
+            console.log( "id a buscar",genero)
+            var filterGames = allGames.filter(v =>v.genresId.includes(4))
+            console.log( "Juegos Filtrados", filterGames)
+            allGames = filterGames}
+                 */
+             
+        
 
         //Resultados a mostrar por página
-            let result = allGames.slice((charXPage * (page -  1)) , (charXPage * (page -  1)) + charXPage )
+            let videogames = allGames.slice((charXPage * (page -  1)) , (charXPage * (page -  1)) + charXPage )
         
         
-        return res.send({
-            result: result, 
-            count: allGames.length
-        })
+        return res.send(videogames)
 
     } catch (error) {
         next(error)

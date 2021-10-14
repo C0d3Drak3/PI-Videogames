@@ -108,6 +108,7 @@ export const removeGame = ()=>{
 
 //acciones de filtros
  export const genreFilter =(genero)=>{
+     console.log("me traigo los generos", genero)
     return{
         type: FILTER_GENRE,
         payload: genero

@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { originFilter, getGenres, setPage, genreFilter, getGames} from '../Redux/actions'
+import { originFilter, getGenres, setPage, genreFilter} from '../Redux/actions'
 
 
 
@@ -16,9 +16,9 @@ function Filter() {
     },[dispatch])
     
 
-    const handleSelect = (e)=>{
+    const handleOnChangeSelect = (e)=>{
         e.preventDefault()
-        
+        console.log("lo que me llega de filtros", e.target.value)
         dispatch(genreFilter(e.target.value))
         dispatch(setPage(1))
     }
@@ -33,15 +33,15 @@ function Filter() {
     
     return (
         <div>
-            <select onChange={handleSelect}>
-                <option selected value="all">all</option>
+            <select onChange={handleOnChangeSelect}>
+                <option  selected value="all">all</option>
                 {genres.map((g) => { return <option key={g.id} value={g.id}>{g.name}</option>})}
             </select>
             <div>
                 <select onChange={handleSelectO}>
                     <option selected value="all">all</option>
-                    <option selected value="api">api</option>
-                    <option selected value="db">db</option>
+                    <option  value="api">api</option>
+                    <option  value="db">db</option>
                 </select>
                 
             </div>

@@ -25,7 +25,7 @@ const Home = () => {
         <div>
             <div className="cards">
             {
-                videogames?.result?.length>0 && videogames.result.map((e)=>{
+                videogames?.length>0 && videogames.map((e)=>{
                    return <Card genre={e.genres.map(g=>g.name+" - ")} image={e.background_image} name={e.name} id={e.id} key={e.id}/>
                 })
             }

@@ -40,7 +40,7 @@ export default function Form() {
         })
     }
 
-    const handleGenresAndPlat = (e) => {
+    /* const handleGenresAndPlat = (e) => {
 
         if (e.target.name === 'genres') {
             setFormulario({
@@ -58,7 +58,7 @@ export default function Form() {
                 [e.target.name]: e.target.value
             });
         }
-    };
+    }; */
     const handleGenres = (g)=>{
         if(formulario.genre.includes(g.target.value)){
            let tempGen = formulario.genre.filter(vg => vg !== g.target.value)

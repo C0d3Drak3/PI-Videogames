@@ -71,20 +71,31 @@ export default function reducer (state = initialState, {type, payload}){
                 order: payload
             }
         case FILTER_GENRE:
+            console.log("el payload entra en el reducer", payload)
             if (payload === "all") {
+                console.log("todos los generos")
                 return {
                     ...state,
                     videogames: state.allGames,
                     filter: payload,
                 }
             } else {
-                const filteredGames = state.videogames.result.filter(v =>{
-                    return v.genres.filter(g=>g.id === payload)
-                })
+               
+             /*     const filterGames = state.allGames.result.filter(e =>{
+                    let flag= false;
+                    e.genresId.map(f=>{if(f=== payload){ flag= true}});
+                    if(flag){return e}
+                })  */
+                
+                
+                console.log( "el payload es ",   payload )
+                const filterGames = state.allGames.filter(v =>  v.genresId.includes(parseInt(payload)))
+                console.log( "Juegos Filtrados", filterGames) 
+               
+               
                 return {
                     ...state,
-                    videogames:{  ...state.videogames,
-                        result:filteredGames}
+                    videogames: filterGames
                     
                 }
             };
@@ -93,23 +104,17 @@ export default function reducer (state = initialState, {type, payload}){
             if(payload === "api"){
             return{
                 ...state,
-                videogames:{
-                    ...state.videogames,
-                    result:state.allGames.result.filter(v =>{
+                videogames:state.allGames.result.filter(v =>{
                         return v.id < 10000000 })
-                } 
+                
             }}else if(payload=== "db"){return{
                 ...state,
-                videogames:{
-                    ...state.videogames,
-                    result:state.allGames.result.filter(v =>{
+                videogames:state.allGames.filter(v =>{
                         return v.id.length> 7})
-                } 
+                 
             } }else{return{
                 ...state,
-                videogames:{
-                    ...state.videogames,
-                    result:state.allGames}}
+                videogames: state.allGames}
                 }
             ;
 
