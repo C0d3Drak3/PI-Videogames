@@ -159,8 +159,7 @@ export default function Form() {
                         ))}
                         
                     </div>
-                    
-                    
+                         
                     <button className="newButton" type='submit' disabled={formulario.genre.length === 0}>
                         <span>ADD GAME</span>
                     </button>

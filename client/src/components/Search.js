@@ -26,7 +26,6 @@ function Search() {
             <form onSubmit={onSubmit}>
                 <input className='searchbar-input' type="text" placeholder="Search..." onChange={handleOnChange} value={input} />
                 <button className='searchbar-button' type="submit" >🔍</button>
-                
             </form>
         </div>
     )

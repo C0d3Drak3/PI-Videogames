@@ -23,8 +23,7 @@ const NavBar = () => {
 
     return (
         <div className="nav">
-
-            
+                  
             <div className="refresh">
                 <button className="refreshB" onClick={e=>{handleClick(e)}}>Home</button>
             </div>

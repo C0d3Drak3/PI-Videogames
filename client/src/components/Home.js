@@ -37,13 +37,11 @@ const Home = () => {
                    return <Card genre={e.genres.map(g=>g.name+" - ")} image={e.background_image} name={e.name} id={e.id} key={e.id}/>
                 })
             }
-            
             </div>
             <div className="paginas">
                 <button className="botonesP" disabled={page -1 === 0} onClick={()=> {changePage(page -1)}}>previous</button>
                     <label className="numeroP">{page}</label>
                 <button className="botonesP" disabled={videogames?.count <= (page * 5)} onClick={()=>{changePage(page +1)}}>next</button>
-
             </div>
         </div>
     )
