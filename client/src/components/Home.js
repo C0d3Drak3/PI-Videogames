@@ -21,8 +21,16 @@ const Home = () => {
         dispatch(setPage(page))
     }
     
+    //pasado a navbar
+    /* function handleClick(e){
+        e.preventDefault();
+        dispatch(getGames({page:1, name:"", order:""}))
+        dispatch(setPage(1))
+    }; */
+
     return (
         <div>
+            
             <div className="cards">
             {
                 videogames?.length>0 && videogames.map((e)=>{

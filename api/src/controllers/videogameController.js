@@ -123,13 +123,13 @@ async function getVideogames(req, res, next){
             })
         }
         
-        //filtrado por genero
+        //filtrado por genero en back para un mejor resultado
         /* if (genero === "all") {
             allGames= allGames
         } else {
             console.log("todos los juegos", allGames)
             console.log( "id a buscar",genero)
-            var filterGames = allGames.filter(v =>v.genresId.includes(4))
+            var filterGames = allGames.filter(v =>v.genresId.includes(parseInt(genero)))
             console.log( "Juegos Filtrados", filterGames)
             allGames = filterGames}
                  */

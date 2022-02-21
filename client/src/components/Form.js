@@ -1,3 +1,4 @@
+import "./Form.css"
 import React, { useEffect, useState } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import { getGenres,createVideogame } from '../Redux/actions/index.js'
@@ -87,6 +88,10 @@ export default function Form() {
             })
         }
     }
+
+    const goToBack = ()=>{
+        history.goBack()
+    }
     
     const platformsList = [
         { name: "PC" },
@@ -109,41 +114,63 @@ export default function Form() {
 
 
     return (
-        <form onSubmit={onSubmit}>
-            <label >Name</label>
-            <input value={formulario.name} placeholder="Name..." onChange={handleOnChange} name="name" type="text" required />
-            <label >Descripcion</label>
-            <input value={formulario.description} placeholder="Description..." onChange={handleOnChange} name="description" type="text" required/>
-            <label >Lanzamiento</label>
-            <input value={formulario.released} placeholder="2000-12-30" onChange={handleOnChange} name="released" type="text" required />
-            <label >Calificacion ⭐</label>
-            <input value={formulario.rating} placeholder="0.00 to 5.00" onChange={handleOnChange} name="rating" type="text" />
-            <label >Plataformas 🎮</label>
-            <div>
-                <select name='platforms' onChange={handlePlatforms} required >
-                    {platformsList.map((p, i) => {return <option key={i} value={p.name}>{p.name}</option>})}
-                </select>
-                {formulario?.platforms.length > 0 && formulario.platforms.map(e =>(
-                    <label>🕹{e}</label>
-                ))}
+        <div className="creation">
+            <div className="form">
+                <form className="form1" onSubmit={onSubmit}>
+                    <div className="newName">
+                        <label >Name </label>
+                        <input value={formulario.name} placeholder="Name..." onChange={handleOnChange} name="name" type="text" required />
+                    </div>
+
+                    <div className="newDesc">
+                        <label >Description </label>
+                        <input value={formulario.description} placeholder="Description..." onChange={handleOnChange} name="description" type="text" required/>                  
+                    </div>
+
+                    <div className="newLaunch">         
+                        <label >Launched </label>
+                        <input value={formulario.released} placeholder="2000-12-30" onChange={handleOnChange} name="released" type="text" required />
+                    </div>
+
+                    <div className="newRating">
+                        <label >Rating ⭐ </label>
+                        <input value={formulario.rating} placeholder="0.00 to 5.00" onChange={handleOnChange} name="rating" type="text" />
+                    </div>
+
+                    <div className="newPlatforms">
+                        <label >Platforms 🎮 </label>
+                        <select name='platforms' onChange={handlePlatforms} required >
+                            {platformsList.map((p, i) => {return <option key={i} value={p.name}>{p.name}</option>})}
+                        </select>
+                        {formulario?.platforms.length > 0 && formulario.platforms.map(e =>(
+                            <label>🕹{e}</label>
+                        ))}
+                    </div>
+
+                    <div className="newGenre">
+                        <label >Genre </label>
+                        <select name='genres' onChange={handleGenres}  required >
+                            <optgroup label="Genres"/>
+                            {genres.map((g) => { return <option key={g.id} value={g.id}>{g.name}</option>})}
+                        </select>
+                        
+                        {formulario?.genre.length > 0 && formulario.genre.map(e =>(
+                            <label>-{e}</label>
+                        ))}
+                        
+                    </div>
+                    
+                    
+                    <button className="newButton" type='submit' disabled={formulario.genre.length === 0}>
+                        <span>ADD GAME</span>
+                    </button>
+                </form>
             </div>
             <div>
-                <select name='genres' onChange={handleGenres}  required >
-                    <optgroup label="Genres"/>
-                    {genres.map((g) => { return <option key={g.id} value={g.id}>{g.name}</option>})}
-                </select>
-                
-                {formulario?.genre.length > 0 && formulario.genre.map(e =>(
-                    <label>-{e}</label>
-                ))}
-                
+                <button className="backButton" onClick={goToBack}>Go Back</button>
             </div>
-            
-            
-            <button type='submit' disabled={formulario.genre.length === 0}>
-                <span>ADD GAME</span>
-            </button>
-        </form>
+        </div>
+
     )
 }
 

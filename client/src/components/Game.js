@@ -19,31 +19,33 @@ function Game(props) {
         }
     },[dispatch,id])
 
-const goToBack = ()=>{
-    history.goBack()
-}
+    const goToBack = ()=>{
+        history.goBack()
+    }
 
     return (
         <div className="allInfo">
-            <button onClick={goToBack}>⏪</button>
             {
-
+                
                 videogame?.name ? 
                 <div className="gameInfo">
                     <img className="gameImage" src={videogame.background_image} alt="Imagen no encontrada" />
                     <div className="info">
-                        <p>{videogame.name}</p>
-                        <p>- {videogame.genres.map(e=>e+" - ")}</p>
-                        <p>{videogame.description}</p>
+                        <p className="infoTitle">{videogame.name}</p>
+                        <p className="infoDescription">{videogame.description}</p>
+                        <p>Genre: {videogame.genres.map(e=>e+" - ")}</p>
                         <p>Release Date: {videogame.released}</p>
                         <p>Rating: {videogame.rating}</p>
-                        <p>- {videogame.platforms.map(e=>e + " - ")}</p>
+                        <p>Platforms: {videogame.platforms.map(e=>e + " - ")}</p>
 
                     </div>
                 </div>
                 :
                 <div>Cargando Juego...</div>
             }
+            
+            <button className="backButton" onClick={goToBack}>Go Back</button>
+            
         </div>
     )
 }

@@ -12,7 +12,8 @@ function Order() {
     }
 
     return (
-        <div>
+        <div className='order'>
+            <p>Order: </p>
             <select onChange={handleSelect}>
                 <option selected value="asc">A-Z</option>
                 <option value="des">Z-A</option>

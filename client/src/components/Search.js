@@ -22,11 +22,13 @@ function Search() {
     }
     
     return (
-        <form onSubmit={onSubmit}>
-            <input type="text" placeholder="Search..." onChange={handleOnChange} value={input} />
-            <button type="submit" >🔍</button>
-            
-        </form>
+        <div className='search'>
+            <form onSubmit={onSubmit}>
+                <input className='searchbar-input' type="text" placeholder="Search..." onChange={handleOnChange} value={input} />
+                <button className='searchbar-button' type="submit" >🔍</button>
+                
+            </form>
+        </div>
     )
 }
 

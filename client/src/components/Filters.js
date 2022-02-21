@@ -32,12 +32,16 @@ function Filter() {
 
     
     return (
-        <div>
-            <select onChange={handleOnChangeSelect}>
-                <option  selected value="all">all</option>
-                {genres.map((g) => { return <option key={g.id} value={g.id}>{g.name}</option>})}
-            </select>
-            <div>
+        <div className='filters'>
+            <div className='genreF'>
+                <p>Genre: </p>
+                <select onChange={handleOnChangeSelect}>
+                    <option  selected value="all">all</option>
+                    {genres.map((g) => { return <option key={g.id} value={g.id}>{g.name}</option>})}
+                </select>
+            </div>
+            <div className='apidbF'>
+                <p>Api/DB: </p>
                 <select onChange={handleSelectO}>
                     <option selected value="all">all</option>
                     <option  value="api">api</option>

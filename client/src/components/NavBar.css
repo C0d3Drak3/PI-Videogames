@@ -3,6 +3,95 @@
     display:flex;
     justify-content:center;
     align-items:center;
-    margin-bottom:1rem;
     background-color: #c3c3c3;
+    font-weight: bold;
+    
+}
+
+.order{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:1rem;
+    margin-top: 1rem;
+    margin-left: 15px;
+    flex-direction: row;
+    font-weight: bold;
+
+}
+
+.filters{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:1rem;
+    margin-top: 1rem;
+    margin-right: 15px;
+}
+.genreF{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: row;
+    font-weight: bold;
+    margin-left: 15px;
+}
+.apidbF{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: row;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+
+.search{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin: 15px;
+    
+    flex-direction: row;
+    font-weight: bold; 
+}
+.searchbar-input{
+    width: 250px;
+    height: 30px;
+    border: 2px solid black;
+    border-radius: 10px 0px 0px 10px;
+    background-color: rgb(255, 255, 255);
+    font-size: 1.2em;
+    color: rgb(0, 0, 0);
+    cursor: text;
+    padding: 0px;
+}
+.searchbar-button{
+    width: 100px;
+    height: 35px;
+    border: 2px solid black;
+    border-radius: 0px 10px 10px 0px;
+    background-color: rgba(250, 248, 245, 0.87);
+    font-size: 1.2em;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    padding: 0px;
+}
+
+.refresh{
+    display: flex;
+    flex-wrap: wrap;
+    
+    padding: 15px;
+
+}
+.refreshB{
+    width: 100px;
+    height: 35px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: rgba(38, 233, 217, 0.87);
+    font-size: 1.2em;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
 }

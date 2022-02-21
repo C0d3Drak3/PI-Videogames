@@ -71,6 +71,7 @@ export default function reducer (state = initialState, {type, payload}){
                 order: payload
             }
         case FILTER_GENRE:
+            //filtrado por genero en el front. Es ineficiente pero fue parte de lo pedido en la tarea. Tambien está en el back
             console.log("el payload entra en el reducer", payload)
             if (payload === "all") {
                 console.log("todos los generos")
@@ -104,7 +105,7 @@ export default function reducer (state = initialState, {type, payload}){
             if(payload === "api"){
             return{
                 ...state,
-                videogames:state.allGames.result.filter(v =>{
+                videogames:state.allGames.filter(v =>{
                         return v.id < 10000000 })
                 
             }}else if(payload=== "db"){return{

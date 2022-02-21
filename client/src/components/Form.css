@@ -1,0 +1,60 @@
+.creation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #eba64c;
+    background-image: url("./images/portal3.jpg");
+}
+
+.backButton{
+    border: 3px solid #000000;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 5px;    
+    height: 40px;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px #000000;
+    font-weight: bold;
+}
+
+.newButton{
+    border: 3px solid #000000;
+    border-radius: 10px;
+    margin: 1px;
+    padding: 5px;    
+    height: 50px;
+    cursor: pointer;
+    background-color: #67ff02dc;
+    box-shadow: 0px 0px 10px #04abf8;
+    font-weight: bold;
+
+}
+
+.form{
+    width: 1050px;
+    height: 400px;
+    display: flex;
+    justify-content: left;
+    font-weight: bold;
+    margin-top: 30px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    border: 3px solid #000000;
+    box-shadow: 0px 0px 15px #ffd20b;
+    
+}
+
+.form1{
+    
+    display: flex;
+    align-items: flex-start ;
+    justify-items: left;
+    font-weight: bold;
+    margin: 10px;
+    background-color: #f2f2f2;
+    
+    
+}

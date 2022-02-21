@@ -1,8 +1,23 @@
+# Individual Project - Henry Videogames
+## Student: Martín Otero
+
+
+<p align="center">
+  <img height="500" src="./screenshots/scrHome.png" />
+  <img height="500" src="./screenshots/scrDetails.png" />
+  <img height="500" src="./screenshots/scrForm.png" />
+
+</p>
+
+
+## These are the instructions given to this proyect
+
+
+
 <p align='left'>
     <img src='https://static.wixstatic.com/media/85087f_0d84cbeaeb824fca8f7ff18d7c9eaafd~mv2.png/v1/fill/w_160,h_30,al_c,q_85,usm_0.66_1.00_0.01/Logo_completo_Color_1PNG.webp' </img>
 </p>
 
-# Individual Project - Henry Videogames
 
 <p align="right">
   <img height="200" src="./videogame.png" />

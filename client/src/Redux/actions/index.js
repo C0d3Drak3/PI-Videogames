@@ -48,10 +48,10 @@ export const getGenres = ()=> {
 export const getGame = (id)=>{
     return (dispatch)=>{
         axios.get(`http://localhost:3001/videogame/${id}`)
-         .then((result)=>{
+         .then((json)=>{
             return dispatch({
                 type: GET_GAME,
-                payload: result.data
+                payload: json.data
             })
          })
          .catch((error)=>{
